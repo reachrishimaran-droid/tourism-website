@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Travel</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            background-color: #f5f6fa;
+        }
+
+        header {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #34495e;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+        }
+
+        .hero {
+            height: 300px;
+            background: url('https://source.unsplash.com/1600x500/?luxury-car,travel') no-repeat center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .cars {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .car-card {
+            width: 260px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 160px;
+        }
+
+        .car-card h3 {
+            margin: 10px;
+        }
+
+        .car-card p {
+            padding: 0 10px;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Booking Form */
+        .form-box {
+            background: white;
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #219150;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚗 Car Travel Services</h1>
+    <p>Comfortable & Affordable Rides</p>
+</header>
+
+<nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('destinations') }}">Destinations</a>
+    <a href="{{ url_for('cars') }}">Car Travel</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+</nav>
+
+<div class="hero">
+    Choose Your Perfect Ride 🚘
+</div>
+
+<!-- 🚗 Cars Section -->
+<div class="section">
+    <h2>Available Vehicles</h2>
+
+    <div class="cars">
+
+        <div class="car-card">
+            <img src="https://source.unsplash.com/300x200/?car">
+            <h3>5 Seater</h3>
+            <p>Perfect for small families.</p>
+            <p class="price">₹2000 / day</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://source.unsplash.com/300x200/?suv">
+            <h3>7 Seater</h3>
+            <p>Comfortable for group travel.</p>
+            <p class="price">₹3000 / day</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://source.unsplash.com/300x200/?van">
+            <h3>11 Seater</h3>
+            <p>Best for large groups.</p>
+            <p class="price">₹4500 / day</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- 📋 Booking Form -->
+<div class="section">
+    <h2>Book Your Ride</h2>
+
+    <div class="form-box">
+        <form method="POST">
+
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="text" name="phone" placeholder="Phone Number" required>
+
+            <select name="car">
+                <option>5 Seater</option>
+                <option>7 Seater</option>
+                <option>11 Seater</option>
+            </select>
+
+            <br><br>
+            <button type="submit">Book Now 🚗</button>
+
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Tourism Website | Safe Travels 🚗</p>
+</footer>
+
+</body>
+</html>
