@@ -16,7 +16,8 @@ nav a {
 }
 
 .hero {
-    background: url('https://source.unsplash.com/1200x400/?travel');
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center;
+background-size: cover;
     height: 300px;
     color: white;
     display: flex;
